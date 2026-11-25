@@ -1,0 +1,2 @@
+import { AdminLayout, DataTable, StatusBadge } from '@/Components/Commerce';
+export default function Index({ items }: any) { return <AdminLayout><h1 className="mb-6 text-3xl font-bold">Customers</h1><DataTable rows={items?.data ?? []} columns={[{ key: 'name', label: 'Name' }, { key: 'email', label: 'Email' }, { key: 'phone', label: 'Phone' }, { key: 'status', label: 'Status', render: (row: any) => <StatusBadge status={row.status} /> }]} /></AdminLayout>; }

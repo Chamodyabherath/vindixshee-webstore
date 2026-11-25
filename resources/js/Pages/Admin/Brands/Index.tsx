@@ -1,0 +1,3 @@
+import { Link } from '@inertiajs/react';
+import { AdminLayout, DataTable, StatusBadge } from '@/Components/Commerce';
+export default function Index({ items }: any) { return <AdminLayout><div className="mb-6 flex justify-between"><h1 className="text-3xl font-bold">Brands</h1><Link className="rounded bg-neutral-950 px-4 py-2 text-white" href="/admin/brands/create">Create</Link></div><DataTable rows={items?.data ?? []} columns={[{ key: 'name', label: 'Name' }, { key: 'slug', label: 'Slug' }, { key: 'status', label: 'Status', render: (row: any) => <StatusBadge status={row.status} /> }]} /></AdminLayout>; }

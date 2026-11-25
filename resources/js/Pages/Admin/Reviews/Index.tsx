@@ -1,0 +1,3 @@
+import { router } from '@inertiajs/react';
+import { AdminLayout, DataTable, StatusBadge } from '@/Components/Commerce';
+export default function Index({ items }: any) { return <AdminLayout><h1 className="mb-6 text-3xl font-bold">Reviews</h1><DataTable rows={items?.data ?? []} columns={[{ key: 'customer_name', label: 'Customer' }, { key: 'rating', label: 'Rating' }, { key: 'status', label: 'Status', render: (row: any) => <StatusBadge status={row.status} /> }, { key: 'actions', label: 'Actions', render: (row: any) => <button className="text-sm font-semibold" onClick={() => router.patch(`/admin/reviews/${row.id}`, { status: row.status === 'approved' ? 'rejected' : 'approved' })}>Toggle</button> }]} /></AdminLayout>; }

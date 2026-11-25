@@ -1,0 +1,2 @@
+import { AdminLayout } from '@/Components/Commerce';
+export default function Index({ stats = {} }: any) { return <AdminLayout><h1 className="mb-6 text-3xl font-bold">Reports</h1><div className="grid gap-4 md:grid-cols-3">{Object.entries(stats).map(([key, value]: any) => <div className="rounded-lg border bg-white p-4" key={key}><p className="text-sm text-neutral-500">{key}</p><strong className="text-2xl">{value}</strong></div>)}</div></AdminLayout>; }
